@@ -4,10 +4,14 @@ Establishing basic functionality:
 
 1. Resource Generators (migrations, models, controllers, resources)
    REMINDER: --no-test-framework
+
    - User: rails g resource User name username password_digest --no-test-framework
-   - BookClub: rails g resource BookClub name
-   - Book: rails g resource Book title author summary user:belongs_to book_club:belongs_to
-   - Comment: rails g resource Comment content user:belongs_to book:belongs_to
+   - Club: rails g resource Club name --no-test-framework (can't call it BookClub b/c 'already used in app or reserved by Ruby on Rails')
+   - Book: rails g resource Book title author summary user:belongs_to club:belongs_to --no-test-framework
+   - Comment: rails g resource Comment content user:belongs_to book:belongs_to --no-test-framework
+
+   - rails db:migrate
+
 2. Update model associations
 3. Create SessionsController
 4. Model validations
