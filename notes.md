@@ -22,7 +22,6 @@ Establishing basic functionality:
 6. Views
 
    - Views: index.html.erb, show.html.erb, new.html.erb, edit.html.erb, \_form.html.erb
-
    - double check resources work & things are displayed
 
 7. Forms
