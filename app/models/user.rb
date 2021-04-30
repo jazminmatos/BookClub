@@ -8,9 +8,7 @@ class User < ApplicationRecord
     has_many :comments
     has_many :books
     has_many :clubs, through: :books
-  
-    has_secure_password
-  
+    
     # validates :name, :username, presence: true
     # validates :username, uniqueness: true
     #devise gem helps validate your password

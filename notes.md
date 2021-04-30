@@ -26,6 +26,10 @@ Establishing basic functionality:
 
 7. OmniAuth & Devise - follow along video
 
+   - Make sure sign up & sign in work
+   - Make sure all views work
+   - How do I check whether error shows up when google login doesn't work???
+
 8. Make some fake users, seed the data, double check relationships
 
 9. Destroy SessionsController b/c Devise
