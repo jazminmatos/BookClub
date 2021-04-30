@@ -12,7 +12,7 @@ class User < ApplicationRecord
     has_secure_password
   
     # validates :name, :username, presence: true
-    validates :username, uniqueness: true
+    # validates :username, uniqueness: true
     #devise gem helps validate your password
   
     def self.create_from_provider_data(provider_data)

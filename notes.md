@@ -24,15 +24,11 @@ Establishing basic functionality:
    - Views: index.html.erb, show.html.erb, new.html.erb, edit.html.erb, \_form.html.erb
    - double check resources work & things are displayed
 
-7. Forms
+7. OmniAuth & Devise - follow along video
 
-   - update params for models
+8. Make some fake users, seed the data, double check relationships
 
-8. OmniAuth & Devise
-
-9. Make some fake users, seed the data, double check relationships
-
-10. Destroy SessionsController b/c Devise
+9. Destroy SessionsController b/c Devise
 
 Nested Resources
 Scope Method

@@ -276,7 +276,7 @@ Devise.setup do |config|
   # scopes are optional, providers have different scope names
   # looks for the google block and searches for the google_client_id
   # looks for the google block and searches for the google_client_secret
-  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id)
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id),
   Rails.application.credentials.dig(:google, :google_client_secret) # , scope: 'userinfo.email, userinfo.profile'
 
   # ==> Warden configuration

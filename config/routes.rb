@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controller: {omniauth_callbacks: 'omniauth'}
+  # 'omniauth' name comes from omniauth_controller.rb
+
   resources :comments
   resources :books
   resources :clubs
