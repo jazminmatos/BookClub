@@ -25,10 +25,16 @@ Establishing basic functionality:
    - double check resources work & things are displayed
 
 7. Forms
+
    - update params for models
 
+8. OmniAuth & Devise
+
+9. Make some fake users, seed the data, double check relationships
+
+10. Destroy SessionsController b/c Devise
+
 Nested Resources
-OmniAuth - use Devise gem?
 Scope Method
 
 Drying up project:

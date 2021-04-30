@@ -3,11 +3,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :books
   resources :clubs
-  resources :users
-
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  post "/logout", to: "sessions#destroy"
 
   get "/welcome", to: "welcome#index"
 

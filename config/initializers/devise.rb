@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '875b6861712f4166479ff493c6cf0b5c3877255fa6d3d7d8c7c57f30406371d1b07158399b7dca5e0d36f810661d82208634271320723484fa6a2048d512de97'
+  # config.secret_key = '1805fb331d2c01c8642e8bf6d0717a17a79b7e219d0998c5224ed2069bcfa3522232b7ec927fc564fff7fbd24d05800112e68533a28d86ff354cc76e0af51174'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '60332cab87d235c4d954663928ef7ebd90f7f7393ed61cb0ec4dd622407d46af05ad40fb7e191f1b47f8a696259f6cad12161e7677ab573d4a252b27ae69f9e1'
+  # config.pepper = '35aa3df8d770e50af931784e91d5611392469c7d2d871728a71adfeceb09e070c79c9999708e7517150fe4d57d86cc22f98cd5ec6b435abebcd95f267b57906b'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -273,9 +273,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  #find the google block and within that, find the google_client_id
-  #find the google block and within that finde the google_client_secret
-  #scopes are optional, providers have different names for their scope possibilities
+  # scopes are optional, providers have different scope names
+  # looks for the google block and searches for the google_client_id
+  # looks for the google block and searches for the google_client_secret
   config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id)
   Rails.application.credentials.dig(:google, :google_client_secret) # , scope: 'userinfo.email, userinfo.profile'
 
