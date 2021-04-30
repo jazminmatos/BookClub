@@ -13,10 +13,11 @@ Establishing basic functionality:
    - rails db:migrate
    - double check schema is correct
 
-2. Update model associations
-3. Create SessionsController
-4. Model validations
-5. Controller Actions & Views
+2. Update model associations for User, Club, Book, Comment
+3. Add validations
+4. Create SessionsController
+5. Model validations
+6. Controller Actions & Views
 
    - Actions: index, show, new, create, edit, update, destroy
    - requiring/permiting params
