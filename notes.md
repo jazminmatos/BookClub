@@ -14,7 +14,7 @@ Establishing basic functionality:
    - double check schema is correct
 
 2. Update model associations for User, Club, Book, Comment
-3. Add validations
+3. Add validations for User, Club, Book, Comment
 4. Create SessionsController
 5. Model validations
 6. Controller Actions & Views
