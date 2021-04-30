@@ -16,16 +16,24 @@ Establishing basic functionality:
 2. Update model associations for User, Club, Book, Comment
 3. Add validations for User, Club, Book, Comment
 4. Create SessionsController
-5. Model validations
-6. Controller Actions & Views
-
+5. Controller Actions
    - Actions: index, show, new, create, edit, update, destroy
    - requiring/permiting params
+6. Views
+
    - Views: index.html.erb, show.html.erb, new.html.erb, edit.html.erb, \_form.html.erb
 
-   - double check resources work
+   - double check resources work & things are displayed
+
+7. Forms
+   - update params for models
 
 Nested Resources
 OmniAuth - use Devise gem?
-Clean up views w/ partials/layouts/locals etc.
 Scope Method
+
+Drying up project:
+
+1. Clean up views w/ partials/layouts/locals etc. - make sure to remove files I don't need
+2. Clean up resources - make sure I remove routes I don't need
+3. Clean up controllers - make sure to remove actions I don't need
