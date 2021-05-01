@@ -26,22 +26,26 @@ Establishing basic functionality:
 
 7. OmniAuth & Devise - follow along video
 
-   - Make sure sign up & sign in work
+   - Make sure sign up & sign in work [x]
    - Make sure all views work
-   - How do I check whether error shows up when google login doesn't work? Can test error by validating another attribute that's needed, but not provided as an input when using the sign up w/ google_oauth2 link.
+   -
 
 8. Destroy SessionsController b/c Devise doesn't need it
 
 9. Make some fake users, seed the data, double check relationships
+   - Check models exist (User.all, Book.all, Comment.all, Club.all)
+   - Create a user and check .comments, .books, .clubs (etc. w/ the rest of the models)
 
 Nested Resources
 Scope Method
 
-Drying up project:
+Refactoring:
 
 1. Clean up views w/ partials/layouts/locals etc. - make sure to remove files I don't need
 2. Clean up resources - make sure I remove routes I don't need
 3. Clean up controllers
    - make sure to remove actions I don't need
-   - add callbacks if necessary
+   - add callbacks/lifecycle methods if necessary
    - add filters if necessary
+4. Clean up models
+   - Remove any attributes that the app is not using
