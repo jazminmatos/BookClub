@@ -1,7 +1,7 @@
 <h1>Welcome to Book Club!!!</h1>
 
 <% if user_signed_in? %>
-    Check out existing book clubs (link this to club show page)<br>
+    <%= link_to "Check out existing book clubs", clubs_path %><br>
     Start reading a book to create your own book club
     <br><br>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

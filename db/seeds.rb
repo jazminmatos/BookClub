@@ -13,3 +13,9 @@
         summary: Faker::Lorem.paragraph
     }])
 end
+
+5.times do
+    Club.create([{
+        name: Faker::Creature::Animal.name
+    }])
+end
