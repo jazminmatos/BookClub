@@ -5,7 +5,7 @@ Establishing basic functionality:
 1. Resource Generators (migrations, models, controllers, resources)
    REMINDER: --no-test-framework
 
-   - User: rails g resource User name username password_digest --no-test-framework
+   - User: rails g resource User name username password_digest --no-test-framework (didn't need to do this before installing devise)
    - Club: rails g resource Club name --no-test-framework (can't call it BookClub b/c 'already used in app or reserved by Ruby on Rails')
    - Book: rails g resource Book title author summary user:belongs_to club:belongs_to --no-test-framework
    - Comment: rails g resource Comment content user:belongs_to book:belongs_to --no-test-framework
@@ -28,11 +28,11 @@ Establishing basic functionality:
 
    - Make sure sign up & sign in work
    - Make sure all views work
-   - How do I check whether error shows up when google login doesn't work???
+   - How do I check whether error shows up when google login doesn't work? Can test error by validating another attribute that's needed, but not provided as an input when using the sign up w/ google_oauth2 link.
 
-8. Make some fake users, seed the data, double check relationships
+8. Destroy SessionsController b/c Devise doesn't need it
 
-9. Destroy SessionsController b/c Devise
+9. Make some fake users, seed the data, double check relationships
 
 Nested Resources
 Scope Method
