@@ -33,10 +33,14 @@ Establishing basic functionality:
 8. Destroy SessionsController b/c Devise doesn't need it
 
 9. Make some fake users, seed the data, double check relationships
+
    - Check models exist (User.all, Book.all, Comment.all, Club.all)
    - Create a user and check .comments, .books, .clubs (etc. w/ the rest of the models)
+   - add Faker to Gemfile & bundle install
 
-Nested Resources
+10. Nested Resources
+    - Define nested routes
+
 Scope Method
 
 Refactoring:
