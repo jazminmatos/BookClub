@@ -42,9 +42,11 @@ Establishing basic functionality:
     - add before_action for setting instances
     - add before_action for requiring login via :authenticate_user!
 
-11. Populate views & connect them via links
+11. Add Bootstrap
 
-12. Nested Resources
+12. Populate views & connect them via links
+
+13. Nested Resources
     - Define nested routes
 
 Scope Method
