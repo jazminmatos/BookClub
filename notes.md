@@ -40,7 +40,7 @@ Establishing basic functionality:
 10. Establish instances inside controllers
 
     - add before_action for setting instances
-    - add before_action for requiring login
+    - add before_action for requiring login via :authenticate_user!
 
 11. Populate views & connect them via links
 
