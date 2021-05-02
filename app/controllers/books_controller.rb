@@ -26,10 +26,16 @@ class BooksController < ApplicationController
     end
 
     def update
-        if @
+        if book.update(book_params)
+            redirect_to book_path(book)
+        else
+            render :edit
+        end
     end
 
     def destroy
+        Book.find(params[:id]).destroy
+        redirect_to books_path
     end
 
     private
