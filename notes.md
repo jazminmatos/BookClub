@@ -61,3 +61,5 @@ Refactoring:
    - add filters if necessary
 4. Clean up models
    - Remove any attributes that the app is not using
+5. Navigation Bar
+   - Make sure everything in navigation works
