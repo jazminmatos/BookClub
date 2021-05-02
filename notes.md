@@ -54,6 +54,8 @@ Scope Method
 Refactoring:
 
 1. Clean up views w/ partials/layouts/locals etc. - make sure to remove files I don't need
+   - Check if I need helpers
+   - Is there logic in views? Move it elsewhere.
 2. Clean up resources - make sure I remove routes I don't need
 3. Clean up controllers
    - make sure to remove actions I don't need
