@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     end
 
     def update
+        if @
     end
 
     def destroy

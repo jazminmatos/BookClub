@@ -28,8 +28,8 @@ class CommentsController < ApplicationController
     end
 
     def update
-        if @comment.update(comment_params)
-            redirect_to comment_path(@comment)
+        if comment.update(comment_params)
+            redirect_to comment_path(comment)
             # Will want to change this to the comment's book page
             # will need to set a book instance
         else
