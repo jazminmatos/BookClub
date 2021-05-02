@@ -1,2 +1,20 @@
 <h1>See a specific club:</h1>
 
+<h2><%= @club.name %></h2><br>
+
+See the books we have read:
+<ul>
+<% @club.books.each do |book| %>
+    <li>
+        <%= book.title %>
+    </li>
+<% end %>
+</ul>
+<br>
+
+See who is a part of our Book Club:
+<ul>
+<% @club.books.each do |book| %>
+    <li><%= book.user.email %><li>
+<% end %>
+</ul>
