@@ -38,7 +38,9 @@ Establishing basic functionality:
    - Create a user and check .comments, .books, .clubs (etc. w/ the rest of the models)
    - add Faker to Gemfile & bundle install
 
-10. Nested Resources
+10. Populate views & connect them via links
+
+11. Nested Resources
     - Define nested routes
 
 Scope Method
