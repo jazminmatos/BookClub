@@ -27,8 +27,7 @@ Establishing basic functionality:
 7. OmniAuth & Devise - follow along video
 
    - Make sure sign up & sign in work [x]
-   - Make sure all views work
-   -
+   - Make sure all views work [x]
 
 8. Destroy SessionsController b/c Devise doesn't need it
 
