@@ -4,13 +4,20 @@
       <div class="nav-link active"><%= link_to "Home", '/' %></div>
     </li>
     <li class="nav-item">
-      <div class="nav-link active"><%= link_to "About", '/' %></div>
+      <div class="nav-link active"><%= link_to "About", '/about' %></div>
     </li>
     <li class="nav-item">
       <div class="nav-link active"><%= link_to "Book Clubs", clubs_path %></div>
     </li>
-    <li class="nav-item">
-      <div class="nav-link active"><%= link_to "Sign In", new_user_session_path %></div>
-    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <div class="nav-link active"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %></div>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <div class="nav-link active"><%= link_to "Sign In", new_user_session_path %></div>
+      </li>
+    <% end %>
+    
   </ul>
 </nav>
