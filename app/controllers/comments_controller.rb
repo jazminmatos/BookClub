@@ -14,10 +14,10 @@ class CommentsController < ApplicationController
     end
 
     def create
-        comment = Comment.new(comment_params)
+        @comment = Comment.new(comment_params)
 
-        if comment.save
-            redirect_to comment_path(comment)
+        if @comment.save
+            redirect_to comment_path(@comment)
             # Will want to change this to the comment's book page
             # will need to set a book instance
         else

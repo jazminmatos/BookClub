@@ -46,6 +46,10 @@ Establishing basic functionality:
 
 12. Populate views & connect them via links
 
+    - club
+    - book
+    - comments
+
 13. Nested Resources
     - Define nested routes
 
