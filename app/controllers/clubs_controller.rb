@@ -14,10 +14,10 @@ class ClubsController < ApplicationController
     end
 
     def create
-        club = Club.new(club_params)
+        @club = Club.new(club_params)
 
-        if club.save
-            redirect_to club_path(club)
+        if @club.save
+            redirect_to club_path(@club)
         else
             render :new
         end
