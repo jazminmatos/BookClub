@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-    before_action :set_club, only: [:show, :edit, :update]
+    before_action :set_club, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     
     def index
@@ -35,7 +35,7 @@ class ClubsController < ApplicationController
     end
 
     def destroy
-        Club.find(params[:id]).destroy
+        @club.destroy
         redirect_to clubs_path
     end
 

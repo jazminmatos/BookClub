@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :set_comment, only: [:show, :edit, :update]
+    before_action :set_comment, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     
     def index
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        Comment.find(params[:id]).destroy
+        @comment.destroy
         redirect_to comments_path
         # Will want to change this to the comment's book page
         # will need to set a book instance

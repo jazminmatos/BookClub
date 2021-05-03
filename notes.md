@@ -46,7 +46,7 @@ Establishing basic functionality:
 
 12. Populate views & connect them via links
 
-    - club
+    - club (index, new/edit forms, show, destroy button)
     - book
     - comments
 

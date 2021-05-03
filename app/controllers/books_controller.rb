@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    before_action :set_book, only: [:show, :edit, :update]
+    before_action :set_book, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     
     def index
@@ -35,7 +35,7 @@ class BooksController < ApplicationController
     end
 
     def destroy
-        Book.find(params[:id]).destroy
+        @book.destroy
         redirect_to books_path
     end
 
