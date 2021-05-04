@@ -8,4 +8,4 @@
 <p><%= @book.summary %></p>
 
 <%= link_to "Edit this book", edit_club_book_path(@book.club_id) %><br>
-<%= button_to "Delete This Book", books_path, method: :destroy %>
+<%= button_to "Delete This Book", book_path(@book), method: :delete %>
