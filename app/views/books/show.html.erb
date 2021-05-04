@@ -7,4 +7,5 @@
 
 <p><%= @book.summary %></p>
 
-<%= link_to "Edit this book", edit_club_book_path(@book.club_id) %>
+<%= link_to "Edit this book", edit_club_book_path(@book.club_id) %><br>
+<%= button_to "Delete This Book", books_path, method: :destroy %>
