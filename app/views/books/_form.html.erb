@@ -1,5 +1,4 @@
 <% # Defining @club allows form_with to recognize that it's from a nested route %>
-<% # Issue: When we fail the submit new club book form, and then try to submit it again, it loses the @club %>
 
 <%= form_with model: [@club, @book] do |f| %>
     <% if @book.errors.any? %>

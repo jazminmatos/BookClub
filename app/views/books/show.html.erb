@@ -1,1 +1,10 @@
 <h1>See specific book:</h1>
+
+
+<h1>Book: <%= @book.title %></h1>
+
+<p>By <%= @book.author %></p>
+
+<p><%= @book.summary %></p>
+
+<%= link_to "Edit this book", edit_club_book_path(@book.club_id) %>
