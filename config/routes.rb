@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :users
   resources :comments
   resources :books
-  resources :clubs
+
+  resources :clubs do
+    resources :books, only: [:show, :index, :new, :edit]
+  end
 
   root to: 'welcome#index'
   get '/about' => 'welcome#about'

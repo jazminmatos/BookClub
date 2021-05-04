@@ -51,7 +51,8 @@ Establishing basic functionality:
     - comments
 
 13. Nested Resources
-    - Define nested routes
+    - Define nested routes in routes.rb
+    - Update parent controller to handle nested resource
 
 Scope Method
 
