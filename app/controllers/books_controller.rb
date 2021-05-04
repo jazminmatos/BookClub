@@ -3,7 +3,15 @@ class BooksController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @books = Book.all
+        # if I'm accessing this via the nested /club/:club_id/books
+        if params[:club_id]
+            # show all of the club's books
+            @books = Club.find(params[:club_id]).books
+        # if I'm accessing this via the non-nested root /books
+        else 
+            # show ALL of the books
+            @books = Book.all
+        end
     end
 
     def show
