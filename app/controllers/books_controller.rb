@@ -31,16 +31,17 @@ class BooksController < ApplicationController
     end
 
     def new
-        # if I'm accessing this via a nested route, but the Club doesn't exist
-        if params[:club_id] && !Club.exists?(params[:club_id])
-            redirect_to clubs_path, alert: "Club not found"
-        # create a new book w/ a club association
+        # if I'm accessing this via a nested route and if club is found, @club will be defined
+        if params[:club_id] && @club = Club.find_by(id: params[:club_id])
+            # create a new book w/ a club association
+            @book = Book.new(club_id: @club.id)
         else
-            @book = Book.new(club_id: params[:club_id])
+            redirect_to clubs_path, alert: "Club not found"
         end
     end
 
     def create
+        @club = Club.find_by(id: params[:club_id])
         @book = Book.new(book_params)
 
         if @book.save
