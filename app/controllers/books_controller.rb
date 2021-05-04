@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    before_action :set_book, only: [:show, :edit, :update, :destroy]
+    before_action :set_book, only: [:edit, :update, :destroy]
     before_action :authenticate_user!
     
     def index
@@ -22,10 +22,22 @@ class BooksController < ApplicationController
     end
 
     def show
+        if Book.find_by(id: params[:id])
+            @book = Book.find(params[:id])
+        else
+            flash[:alert] = "Book not found"
+            redirect_to club_books_path(params[:club_id])
+        end
     end
 
     def new
-        @book = Book.new
+        # if I'm accessing this via a nested route, but the Club doesn't exist
+        if params[:club_id] && !Club.exists?(params[:club_id])
+            redirect_to clubs_path, alert: "Club not found"
+        # create a new book w/ a club association
+        else
+            @book = Book.new(club_id: params[:club_id])
+        end
     end
 
     def create
@@ -58,7 +70,7 @@ class BooksController < ApplicationController
     private
 
     def book_params
-        params.require(:book).permit(:title, :author, :summary)
+        params.require(:book).permit(:title, :author, :summary, :club_id)
     end
 
     def set_book
