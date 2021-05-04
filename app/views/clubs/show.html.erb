@@ -14,11 +14,10 @@ NOTE: NEED TO MAKE SURE THERE ARE NO DUPLICATES (i.e. a duplicate of a book w/ t
 <br>
 
 See who is a part of our Book Club: <br>
-NOTE: How can I make sure there are no duplicates?
 <ul>
-<% @club.books.each do |book| %>
+<% @club.users.uniq.each do |user| %>
     <li>
-        <%= book.user.email %>
+        <%= user.email %>
     </li>
 <% end %>
 </ul>
