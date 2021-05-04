@@ -5,8 +5,15 @@ class BooksController < ApplicationController
     def index
         # if I'm accessing this via the nested /club/:club_id/books
         if params[:club_id]
-            # show all of the club's books
-            @books = Club.find(params[:club_id]).books
+            # if the club is found
+            if Club.find_by(id: params[:club])
+                # show all of the club's books
+                @books = Club.find(params[:club_id]).books
+            # else if the club is NOT found
+            else
+                flash[:alert] = "Club not found"
+                redirect_to clubs_path
+            end
         # if I'm accessing this via the non-nested root /books
         else 
             # show ALL of the books
