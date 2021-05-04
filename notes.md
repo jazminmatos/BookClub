@@ -56,10 +56,17 @@ Establishing basic functionality:
     - comments
 
 13. Nested Resources
+
     - Define nested routes in routes.rb
     - Update child controller to handle nested resource (show, index, new, edit, permitted params)
     - Test new routes (and see if it's possible to hack...)
     - Update view files w/ desired routes: new_club_book (nested) vs. new_book (not nested)
+      - Update club show page in include separate book links
+
+14. Who should have access to what???
+
+- Should users be able to delete clubs or books?
+- Should there be any restrictions on who can add books? How would I implement that?
 
 Scope Method
 

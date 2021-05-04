@@ -2,23 +2,27 @@
 
 <h2><%= @club.name %></h2><br>
 
-See the books we have read:
+See the books we have read: <br>
+NOTE: NEED TO MAKE SURE THERE ARE NO DUPLICATES (i.e. a duplicate of a book w/ the same name AND author) WITHIN CLUB
 <ul>
 <% @club.books.each do |book| %>
     <li>
-        <%= book.title %>
+        <%= link_to book.title, book_path(book) %>
     </li>
 <% end %>
 </ul>
 <br>
 
-See who is a part of our Book Club:
+See who is a part of our Book Club: <br>
+NOTE: NEED TO MAKE SURE THERE ARE NO DUPLICATES...also why are there extra bullets???
 <ul>
 <% @club.books.each do |book| %>
-    <li><%= book.user.email %><li>
+    <li>
+        <%= book.user.email %>
+    </li>
 <% end %>
 </ul>
 
 <%= link_to "Edit Book Club", edit_club_path(@club) %><br>
-<%= link_to "Add Books", new_book_path %><br>
+<%= link_to "Add Books", new_club_book_path(@club) %><br>
 <%= button_to "Delete This Club", clubs_path, method: :destroy %>

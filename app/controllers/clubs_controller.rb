@@ -36,6 +36,7 @@ class ClubsController < ApplicationController
 
     def destroy
         @club.destroy
+        # Am I not able to destroy this club b/c I need to destroy any book that would be associated w/ this as well?
         redirect_to clubs_path
     end
 
