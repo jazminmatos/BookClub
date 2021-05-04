@@ -14,11 +14,16 @@ Establishing basic functionality:
    - double check schema is correct
 
 2. Update model associations for User, Club, Book, Comment
+
 3. Add validations for User, Club, Book, Comment
-4. Create SessionsController
+
+4. Create SessionsController (unecessary due to devise gem)
+
 5. Controller Actions
+
    - Actions: index, show, new, create, edit, update, destroy
    - requiring/permiting params
+
 6. Views
 
    - Views: index.html.erb, show.html.erb, new.html.erb, edit.html.erb, \_form.html.erb
@@ -52,7 +57,8 @@ Establishing basic functionality:
 
 13. Nested Resources
     - Define nested routes in routes.rb
-    - Update parent controller to handle nested resource
+    - Update child controller to handle nested resource (show, index, new, edit)
+    - Update view files w/ desired routes: new_club_book (nested) vs. new_book (not nested)
 
 Scope Method
 
