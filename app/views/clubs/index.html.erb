@@ -1,5 +1,11 @@
 <h1>Book Club Lists</h1>
 
+<% if flash[:alert] %>
+        <%= flash[:alert] %>
+<% end %>
+
+<br>
+
 <ul>
 <% @clubs.collect do |club| %>
         <li><%= link_to club.name, club_path(club) %></li>
