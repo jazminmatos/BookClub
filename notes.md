@@ -55,7 +55,7 @@ Establishing basic functionality:
     - book
     - comments
 
-13. Nested Resources
+13. Nested Resources (Club => Book)
 
     - Define nested routes in routes.rb
     - Update child controller to handle nested resource (show, index, new, edit, permitted params)
@@ -63,7 +63,11 @@ Establishing basic functionality:
     - Update view files w/ desired routes: new_club_book (nested) vs. new_book (not nested)
       - Update club show page in include separate book links
 
-14. Who should have access to what???
+14. Nested Resources (Book => Comment)
+
+15. Display flash alerts
+
+16. Who should have access to what???
 
 - Should users be able to delete clubs or books?
 - Should there be any restrictions on who can add books? How would I implement that?

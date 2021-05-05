@@ -6,7 +6,7 @@ class BooksController < ApplicationController
         # if I'm accessing this via the nested /club/:club_id/books
         if params[:club_id]
             # if the club is found
-            if Club.find_by(id: params[:club])
+            if Club.find_by(id: params[:club_id])
                 # show all of the club's books
                 @books = Club.find(params[:club_id]).books
             # else if the club is NOT found

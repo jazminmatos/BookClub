@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :books
 
   resources :clubs do
-    resources :books, only: [:show, :index, :new, :create, :edit]
+    resources :books, only: [:index, :new, :create, :edit]
   end
 
   root to: 'welcome#index'
