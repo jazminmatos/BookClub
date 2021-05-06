@@ -36,6 +36,7 @@ class CommentsController < ApplicationController
             @comment = Comment.new(book_id: @book.id)
         else
             redirect_to books_path, alert: "Book not found"
+        end
     end
 
     def create
