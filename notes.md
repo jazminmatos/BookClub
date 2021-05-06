@@ -68,6 +68,7 @@ Establishing basic functionality:
     - Update child controller to handle nested resource (index, new, permitted params)
     - Test new routes (and see if it's possible to hack)
     - Update view files w/ desired routes: new_book_comment (nested) vs. new_comment (not nested)
+      - Render comment index page in book show page?
 
 15. Display/Update flash alerts
 

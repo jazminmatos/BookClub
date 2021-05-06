@@ -1,23 +1,49 @@
 class CommentsController < ApplicationController
-    before_action :set_comment, only: [:show, :edit, :update, :destroy]
+    before_action :set_comment, only: [:edit, :update, :destroy]
     before_action :authenticate_user!
     
     def index
-        @comments = Comment.all
+        # if I'm accessing this via the nested /book/:book_id/comments
+        if params[:book_id]
+            # if book is found
+            if Book.find_by(id: params[:book_id])
+                # show all of the book's comments
+                    @comments = Book.find(params[:book_id]).comments
+            else
+                flash[:alert] = "Book not found"
+                redirect_to books_path
+            end
+        # if I'm accessing this via the non-nested root /comments
+        else
+            # show ALL of the comments
+            @comments = Comment.all
+        end
     end
 
     def show
+        if Comment.find_by(id: params[:id])
+            @comment = Comment.find(params[:id])
+        else
+            flash[:alert] = "Comment not found"
+            redirect_to book_comments_path(params[:book_id])
+        end
     end
 
     def new
-        @comment = Comment.new
+        # if I'm accessing this via a nested route and if book is found, @book will be defined
+        if params[:book_id] && @book = Book.find_by(id: params[:book_id])
+            # create a new comment w/ a book association
+            @comment = Comment.new(book_id: @book.id)
+        else
+            redirect_to books_path, alert: "Book not found"
     end
 
     def create
+        @book = Book.find_by(id: params[:book_id])
         @comment = Comment.new(comment_params)
 
         if @comment.save
-            redirect_to comment_path(@comment)
+            redirect_to book_path(@book)
             # Will want to change this to the comment's book page
             # will need to set a book instance
         else
@@ -29,8 +55,8 @@ class CommentsController < ApplicationController
     end
 
     def update
-        if comment.update(comment_params)
-            redirect_to comment_path(comment)
+        if @comment.update(comment_params)
+            redirect_to book_path(@comment.book_id)
             # Will want to change this to the comment's book page
             # will need to set a book instance
         else
@@ -40,7 +66,7 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment.destroy
-        redirect_to comments_path
+        redirect_to book_path(@comment.book_id)
         # Will want to change this to the comment's book page
         # will need to set a book instance
     end
@@ -48,7 +74,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:content)
+        params.require(:comment).permit(:content, :book_id, :user_id)
     end
 
     def set_comment
