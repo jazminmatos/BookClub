@@ -1,3 +1,11 @@
 <h1>Book List</h1>
 
-<p>This is all of my books</p>
+<p>See what our users are reading:</p>
+
+<ul>
+<% @books.each do |book| %>
+    <li>
+        <%= link_to book.title, book_path(book) %>
+    </li>
+<% end %>
+</ul>

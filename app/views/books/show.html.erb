@@ -7,6 +7,12 @@
 
 <p><%= @book.summary %></p>
 
+<p>Comments:</p>
+
+
+Comment on this book (THIS WILL BE A NESTED LINK TO COMMENT)
+
+<br><br>
 <%= link_to "Edit this book", edit_book_path(@book.id) %><br>
-<%= link_to "Go to book club", club_path(@book.club_id) %>
+<%= link_to "Go to book club page", club_path(@book.club_id) %>
 <%= button_to "Delete This Book", book_path(@book), method: :delete %>

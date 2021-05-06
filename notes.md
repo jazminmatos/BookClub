@@ -58,12 +58,16 @@ Establishing basic functionality:
 13. Nested Resources (Club => Book)
 
     - Define nested routes in routes.rb
-    - Update child controller to handle nested resource (index, new, edit, update, permitted params)
+    - Update child controller to handle nested resource (index, new, permitted params)
     - Test new routes (and see if it's possible to hack...)
     - Update view files w/ desired routes: new_club_book (nested) vs. new_book (not nested)
-      - Update club show page in include separate book links
 
 14. Nested Resources (Book => Comment)
+
+    - Defined nested routes in routes.rb
+    - Update child controller to handle nested resource (index, new, permitted params)
+    - Test new routes (and see if it's possible to hack)
+    - Update view files w/ desired routes: new_book_comment (nested) vs. new_comment (not nested)
 
 15. Display/Update flash alerts
 
