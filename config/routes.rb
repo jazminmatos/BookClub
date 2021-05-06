@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :new, :create]
   end
 
+  resources :books do 
+    resources :comments, only: [:index, :new, :create]
+  end
+
   root to: 'welcome#index'
   get '/about' => 'welcome#about'
 

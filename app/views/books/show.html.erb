@@ -10,7 +10,7 @@
 <p>Comments:</p>
 
 
-Comment on this book (THIS WILL BE A NESTED LINK TO COMMENT)
+<%= link_to "Comment on this book", new_book_comment_path(@book.id) %>
 
 <br><br>
 <%= link_to "Edit this book", edit_book_path(@book.id) %><br>
