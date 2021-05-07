@@ -24,6 +24,7 @@ class BooksController < ApplicationController
     def show
         if Book.find_by(id: params[:id])
             @book = Book.find(params[:id])
+            @comments = @book.comments.comment_order
         else
             flash[:alert] = "Book not found"
             redirect_to club_books_path(params[:club_id])
@@ -36,7 +37,7 @@ class BooksController < ApplicationController
             # create a new book w/ a club association
             @book = Book.new(club_id: @club.id)
         else
-            redirect_to clubs_path, alert: "Club not found"
+            redirect_to clubs_path, alert: "You can't create a book without a club...nice try though"
         end
     end
 

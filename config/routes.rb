@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # 'omniauth' name comes from omniauth_controller.rb
 
   resources :users
-  resources :comments
+  resources :comments, except: [:show, :index]
   resources :books
 
   resources :clubs do

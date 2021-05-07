@@ -9,10 +9,11 @@
 
 <p>Comments:</p>
 <ul>
-    <% @book.comments.each do |comment| %>
+    <% @comments.each do |comment| %>
         <li>
             <%= comment.user.email %> says <%= comment.content %><br>
-            <%= link_to "edit", edit_comment_path(comment) %> | <%= link_to "delete", comment_path(comment), method: :delete %>
+            <em>Posted at <%= comment.created_at.strftime("%B %-d, %Y at %I:%M%p") %></em><br>
+            <%= link_to "edit", edit_comment_path(comment) %> | <%= link_to "delete", comment_path(comment), method: :delete %><br>
         </li>
     <% end %>
 </ul>

@@ -27,8 +27,8 @@ class ClubsController < ApplicationController
     end
 
     def update
-        if club.update(club_params)
-            redirect_to club_path(club)
+        if @club.update(club_params)
+            redirect_to club_path(@club)
         else
             render :edit
         end

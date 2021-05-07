@@ -74,8 +74,8 @@ Establishing basic functionality:
 
 16. Who should have access to what???
 
-- Should users be able to delete clubs or books?
-- Should there be any restrictions on who can add books? How would I implement that?
+- Remove edit & delete actions in clubs_controller.rb
+- Should there be any restrictions on who can add books? How would I implement that? if a book already exists in the club, then the rest become suggestions?
 
 Scope Method
 
@@ -84,6 +84,7 @@ Refactoring:
 1. Clean up views w/ partials/layouts/locals etc. - make sure to remove files I don't need
    - Check if I need helpers
    - Is there logic in views? Move it elsewhere.
+   - Remove views that match routes that no longer exist (ex: Comments index page)
 2. Clean up resources - make sure I remove routes I don't need
 3. Clean up controllers
    - make sure to remove actions I don't need
