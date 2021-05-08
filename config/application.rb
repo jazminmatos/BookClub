@@ -20,5 +20,7 @@ module BookClub
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.default_locale = :en
+
+    config.assets.paths << Rails.root.join("app", "assets", "img")
   end
 end
