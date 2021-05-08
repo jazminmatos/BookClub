@@ -72,12 +72,13 @@ Establishing basic functionality:
 
 15. Display/Update flash alerts
 
-16. Who should have access to what???
+16. Scope Method
 
-- Remove edit & delete actions in clubs_controller.rb
-- Should there be any restrictions on who can add books? How would I implement that? if a book already exists in the club, then the rest become suggestions?
+17. Populate readme
 
-Scope Method
+18. Who should have access to what???
+    - Remove edit & delete actions in clubs_controller.rb
+    - Should there be any restrictions on who can add books? How would I implement that? if a book already exists in the club, then the rest become suggestions?
 
 Refactoring:
 
@@ -94,3 +95,11 @@ Refactoring:
    - Remove any attributes that the app is not using
 5. Navigation Bar
    - Make sure everything in navigation works
+6. Perhaps add an owner attribute to Club and make the person who creates the book club, the owner
+7. Remove 'Forget Password?' and other Devise view files
+
+Final:
+
+1. Film walkthrough of project
+2. Write blog
+3. Hand project in
