@@ -1,10 +1,27 @@
-<h1>Hi from the user's show page!</h1><br>
+<h1>Profile Page</h1><br>
 
 <h2>My Clubs</h2>
-<p>You haven't created any clubs yet...</p><br>
+<% if !current_user.clubs.empty? %>
+    <ul>
+    <% current_user.clubs.uniq.each do |club| %>
+        <li>
+            <%= link_to club.name, club_path(club) %>
+        </li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>You haven't created any clubs yet...</p><br>
+<% end %>
 
-<h2>Books I've Read</h2>
-<p>You haven't read any books yet...</p><br>
-
-<h2>Currently Reading</h2>
-<p>You are not currently reading a book...</p><br>
+<h2>Logged Books</h2>
+<% if !current_user.books.empty? %>
+    <ul>
+    <% current_user.books.each do |book| %>
+        <li>
+            <%= link_to book.title, book_path(book) %>
+        </li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>You haven't started reading any books yet...</p><br>
+<% end %>
