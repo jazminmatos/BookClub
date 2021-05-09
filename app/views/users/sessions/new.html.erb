@@ -2,7 +2,7 @@
 
 <% # Devise stores their errors in flash alerts %>
 <% if flash[:alert] %>
-  <%= flash[:alert] %>
+  <p><%= flash[:alert] %></p>
 <% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
