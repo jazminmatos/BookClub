@@ -35,9 +35,12 @@ class ClubsController < ApplicationController
     end
 
     def destroy
-        @club.destroy
-        # Am I not able to destroy this club b/c I need to destroy any book that would be associated w/ this as well?
-        redirect_to clubs_path
+        if @club.books.empty?
+            @club.destroy
+            redirect_to clubs_path
+        else
+            redirect_to clubs_path, alert: "Please remove all the books before deleting this club"
+        end
     end
 
     private
