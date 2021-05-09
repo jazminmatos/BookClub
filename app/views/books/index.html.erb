@@ -1,5 +1,9 @@
 <h1>See what our users are reading:</h1>
 
+<% if flash[:alert] %>
+        <p><%= flash[:alert] %><p>
+<% end %>
+
 <ul>
 <% @books.each do |book| %>
     <li>
