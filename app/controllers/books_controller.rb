@@ -11,8 +11,7 @@ class BooksController < ApplicationController
                 @books = Club.find(params[:club_id]).books
             # else if the club is NOT found
             else
-                flash[:alert] = "Club not found"
-                redirect_to clubs_path
+                redirect_to clubs_path, alert: "Could not find club"
             end
         # if I'm accessing this via the non-nested root /books
         else 
@@ -26,8 +25,7 @@ class BooksController < ApplicationController
             @book = Book.find(params[:id])
             @comments = @book.comments.comment_order
         else
-            flash[:alert] = "Book not found"
-            redirect_to books_path
+            redirect_to books_path, alert: "Could not find book"
         end
     end
 
