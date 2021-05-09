@@ -52,6 +52,9 @@ class CommentsController < ApplicationController
     end
 
     def edit
+        if @comment.user_id != current_user.id
+            redirect_to book_path(@comment.book_id), alert: "You cannot edit someone else's comment..."
+        end
     end
 
     def update
@@ -63,8 +66,12 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @comment.destroy
-        redirect_to book_path(@comment.book_id)
+        if @comment.user_id == current_user.id
+            @comment.destroy
+            redirect_to book_path(@comment.book_id)
+        else
+            redirect_to book_path(@comment.book_id), alert: "You cannot delete someone else's comment..."
+        end
     end
 
     private

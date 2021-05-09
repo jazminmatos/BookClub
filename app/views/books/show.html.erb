@@ -13,8 +13,10 @@
     <% @comments.each do |comment| %>
         <li>
             <%= comment.user.email %> says <%= comment.content %><br>
-            <em>Posted at <%= comment.created_at.strftime("%B %-d, %Y at %I:%M%p") %></em><br>
-            <%= link_to "edit", edit_comment_path(comment) %> | <%= link_to "delete", comment_path(comment), method: :delete %><br>
+            <em>Posted at <%= comment.created_at.strftime("%B %-d, %Y at %-l:%M%P") %></em><br>
+            <% if comment.user_id == current_user.id %>
+                <%= link_to "edit", edit_comment_path(comment) %> | <%= link_to "delete", comment_path(comment), method: :delete %><br>
+            <% end %>
         </li>
     <% end %>
 </ul>
