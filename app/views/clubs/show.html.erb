@@ -1,12 +1,10 @@
-<h1>See a specific club:</h1>
+<h1>Welcome to <%= @club.name %></h1><br>
 
-<h2><%= @club.name %></h2><br>
-
-See the books we have read: <br>
+See the books we are reading: <br>
 <ul>
 <% @club.books.each do |book| %>
     <li>
-        <%= link_to book.title, book_path(book) %>
+        <%= link_to book.title, book_path(book) %> <em>(added by <%= book.user.email %>)</em>
     </li>
 <% end %>
 </ul>
