@@ -3,7 +3,7 @@ class BooksController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        # if I'm accessing this via the nested /club/:club_id/books
+        # if I'm accessing this via the nested /clubs/:club_id/books
         if params[:club_id]
             # if the club is found
             if Club.find_by(id: params[:club_id])
@@ -27,7 +27,7 @@ class BooksController < ApplicationController
             @comments = @book.comments.comment_order
         else
             flash[:alert] = "Book not found"
-            redirect_to club_books_path(params[:club_id])
+            redirect_to books_path
         end
     end
 
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
             # create a new book w/ a club association
             @book = Book.new(club_id: @club.id)
         else
-            redirect_to clubs_path, alert: "You can't create a book without a club...nice try though"
+            redirect_to clubs_path, alert: "You can't create a book without a club...nice try though 👀"
         end
     end
 
