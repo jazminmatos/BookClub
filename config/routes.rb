@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :comments, except: [:show, :index]
   resources :books
 
-  resources :clubs do
+  resources :clubs, except: [:destroy] do
     resources :books, only: [:index, :new, :create]
   end
 

@@ -34,14 +34,15 @@ class ClubsController < ApplicationController
         end
     end
 
-    def destroy
-        if @club.books.empty?
-            @club.destroy
-            redirect_to clubs_path
-        else
-            redirect_to clubs_path, alert: "Please remove all the books before deleting this club"
-        end
-    end
+    # Don't want users to be able to destroy clubs
+    # def destroy
+    #     if @club.books.empty?
+    #         @club.destroy
+    #         redirect_to clubs_path
+    #     else
+    #         redirect_to clubs_path, alert: "Please remove all the books before deleting this club"
+    #     end
+    # end
 
     private
 
