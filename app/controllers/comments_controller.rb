@@ -46,8 +46,6 @@ class CommentsController < ApplicationController
 
         if @comment.save
             redirect_to book_path(@book)
-            # Will want to change this to the comment's book page
-            # will need to set a book instance
         else
             render :new
         end
@@ -59,8 +57,6 @@ class CommentsController < ApplicationController
     def update
         if @comment.update(comment_params)
             redirect_to book_path(@comment.book_id)
-            # Will want to change this to the comment's book page
-            # will need to set a book instance
         else
             render :edit
         end
@@ -69,8 +65,6 @@ class CommentsController < ApplicationController
     def destroy
         @comment.destroy
         redirect_to book_path(@comment.book_id)
-        # Will want to change this to the comment's book page
-        # will need to set a book instance
     end
 
     private
