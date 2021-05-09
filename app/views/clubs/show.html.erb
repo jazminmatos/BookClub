@@ -19,7 +19,9 @@ See who is a part of our Book Club: <br>
 <% end %>
 </ul>
 
-<%= link_to "Edit Book Club", edit_club_path(@club) %><br>
+<% if @club_ids.include?(@club.id) %>
+    <%= link_to "Edit Book Club", edit_club_path(@club) %><br>
+<% end %>
 <%= link_to "Add a Book To Join This Club", new_club_book_path(@club) %><br>
 
 <!-- Don't want users to be able to delete clubs without having an club owner attribute-->

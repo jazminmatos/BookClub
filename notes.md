@@ -74,11 +74,12 @@ Establishing basic functionality:
 
 16. Display/Update flash alerts
 
-17. Populate readme
+17. Who should have access to what???
 
-18. Who should have access to what???
     - Remove edit & delete actions in clubs_controller.rb
     - Should there be any restrictions on who can add books? How would I implement that? if a book already exists in the club, then the rest become suggestions?
+
+18. Populate readme
 
 Refactoring:
 

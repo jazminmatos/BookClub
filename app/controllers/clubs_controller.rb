@@ -7,6 +7,7 @@ class ClubsController < ApplicationController
     end
 
     def show
+        @club_ids = current_user.books.collect{|book| book.club_id}.uniq
     end
 
     def new
@@ -24,6 +25,11 @@ class ClubsController < ApplicationController
     end
 
     def edit
+        @club_ids = current_user.books.collect{|book| book.club_id}.uniq
+        
+        if !@club_ids.include?(@club.id)
+            redirect_to clubs_path, alert: "You can't edit this club unless you're a part of it..."
+        end
     end
 
     def update
