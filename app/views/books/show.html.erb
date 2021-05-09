@@ -1,7 +1,4 @@
-<h1>See specific book:</h1>
-
-
-<h1>Book: <%= @book.title %></h1>
+<h1><%= @book.title %></h1>
 
 <p>By <%= @book.author %></p>
 
@@ -18,7 +15,9 @@
     <% end %>
 </ul>
 
-<%= link_to "New Comment", new_book_comment_path(@book.id) %>
+<%= link_to "New Comment", new_book_comment_path(@book.id) %><br><br>
+
+<%= link_to "Interested in buying this book?", "http://www.google.de/search?q=#{@book.title}", :target => "_blank" %>
 
 <br><br>
 <%= link_to "Edit this book", edit_book_path(@book.id) %><br>

@@ -3,7 +3,6 @@
 <h2><%= @club.name %></h2><br>
 
 See the books we have read: <br>
-NOTE: NEED TO MAKE SURE THERE ARE NO DUPLICATES (i.e. a duplicate of a book w/ the same name AND author) WITHIN CLUB
 <ul>
 <% @club.books.each do |book| %>
     <li>

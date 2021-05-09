@@ -1,4 +1,4 @@
-<h1>Book Club Lists</h1>
+<h1>See all the BookClubs:</h1>
 
 <% if flash[:alert] %>
         <%= flash[:alert] %>
@@ -8,7 +8,7 @@
 
 <ul>
 <% @clubs.collect do |club| %>
-        <li><%= link_to club.name, club_path(club) %></li>
+        <li><%= link_to club.name, club_path(club) %> (# of users: <%= club.users.uniq.count %>)</li>
 <% end %>
 </ul>
 

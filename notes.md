@@ -70,9 +70,9 @@ Establishing basic functionality:
     - Update view files w/ desired routes: new_book_comment (nested) vs. new_comment (not nested)
       - Render comment index page in book show page?
 
-15. Display/Update flash alerts
+15. Scope Method
 
-16. Scope Method
+16. Display/Update flash alerts
 
 17. Populate readme
 
