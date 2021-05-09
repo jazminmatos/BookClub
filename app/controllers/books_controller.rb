@@ -51,6 +51,9 @@ class BooksController < ApplicationController
     end
 
     def edit
+        if @book.user_id != current_user.id
+            redirect_to book_path(@book), alert: "You cannot edit this book..."
+        end
     end
 
     def update
@@ -62,8 +65,12 @@ class BooksController < ApplicationController
     end
 
     def destroy
-        @book.destroy
-        redirect_to books_path
+        if @book.user_id == current_user.id
+            @book.destroy
+            redirect_to books_path
+        else
+            redirect_to books_path, alert: "You cannot delete this book..."
+        end
     end
 
     private

@@ -1,5 +1,9 @@
 <h1><%= @book.title %></h1> 
 
+<% if flash[:alert] %>
+        <p><%= flash[:alert] %><p>
+<% end %>
+
 <p>By <%= @book.author %></p>
 
 <p><%= @book.summary %></p>
@@ -15,11 +19,14 @@
     <% end %>
 </ul>
 
-<%= link_to "New Comment", new_book_comment_path(@book.id) %><br><br>
+<%= link_to "New Comment", new_book_comment_path(@book.id) %>
 
-<%= link_to "Interested in buying this book?", "http://www.google.de/search?q=#{@book.title}", :target => "_blank" %>
 
 <br><br>
-<%= link_to "Edit this book", edit_book_path(@book.id) %><br>
-<%= link_to "Go to book club page", club_path(@book.club_id) %>
-<%= button_to "Delete This Book", book_path(@book), method: :delete %>
+<% if current_user.id == @book.user_id %>
+    <%= link_to "Edit this book", edit_book_path(@book.id) %><br>
+    <%= button_to "Delete This Book", book_path(@book), method: :delete %><br>
+<% end %>
+
+<%= link_to "Go to book club page", club_path(@book.club_id) %><br>
+<%= link_to "Interested in buying this book?", "http://www.google.de/search?q=#{@book.title}", :target => "_blank" %><br>
