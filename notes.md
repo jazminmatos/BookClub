@@ -81,6 +81,12 @@ Establishing basic functionality:
 
 18. Populate readme
 
+Submissions:
+
+1. Film walkthrough of project
+2. Write blog
+3. Hand project in
+
 Refactoring:
 
 1. Clean up views w/ partials/layouts/locals etc. - make sure to remove files I don't need
@@ -101,6 +107,4 @@ Refactoring:
 
 Final:
 
-1. Film walkthrough of project
-2. Write blog
-3. Hand project in
+1. Project Assessment
