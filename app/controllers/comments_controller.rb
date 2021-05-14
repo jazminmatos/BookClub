@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
     end
 
     def create
+        byebug
         @book = Book.find_by(id: params[:book_id])
         @comment = Comment.new(comment_params)
 

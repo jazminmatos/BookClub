@@ -22,5 +22,7 @@ module BookClub
     config.i18n.default_locale = :en
 
     config.assets.paths << Rails.root.join("app", "assets", "img")
+
+    config.time_zone = 'Eastern Time (US & Canada)'
   end
 end
