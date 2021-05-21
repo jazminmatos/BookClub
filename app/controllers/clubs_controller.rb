@@ -1,13 +1,16 @@
 class ClubsController < ApplicationController
     before_action :set_club, only: [:edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index]
+
+    #in the view, shows me edit link if current user is a part of the club
+    before_action :set_club_ids, only: [:show, :edit]
     
     def index
         @clubs = Club.all
     end
 
     def show
-        @club_ids = current_user.books.collect{|book| book.club_id}.uniq
+        #@club_ids = current_user.books.collect{|book| book.club_id}.uniq
 
         if Club.find_by(id: params[:id])
             @club = Club.find(params[:id])
@@ -31,7 +34,7 @@ class ClubsController < ApplicationController
     end
 
     def edit
-        @club_ids = current_user.books.collect{|book| book.club_id}.uniq
+        #@club_ids = current_user.books.collect{|book| book.club_id}.uniq
         
         if !@club_ids.include?(@club.id)
             redirect_to clubs_path, alert: "You can't edit this club unless you're a part of it..."
@@ -64,5 +67,9 @@ class ClubsController < ApplicationController
 
     def set_club
         @club = Club.find(params[:id])
+    end
+
+    def set_club_ids
+        @club_ids = current_user.books.collect{|book| book.club_id}.uniq
     end
 end
