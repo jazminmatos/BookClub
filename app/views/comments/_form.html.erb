@@ -1,11 +1,11 @@
 <% # Defining @book allows form_with to recognize that it's from a nested route %>
 
-<%= form_with model: [@book, @comment] do |f| %>
-    <% if @comment.errors.any? %>
+<%= form_with model: [book, comment] do |f| %>
+    <% if comment.errors.any? %>
         <div id="error_explanation">
             <h2>There were some errors:</h2>
             <ul>
-                <% @comment.errors.full_messages.each do |msg| %>
+                <% comment.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
                 <% end %>
             </ul>
@@ -14,11 +14,11 @@
 
     <%= f.hidden_field :user_id, value: current_user.id %>
 
-    <% if @book %>
-        <%= f.hidden_field :book_id, value: @book.id %>
+    <% if book %>
+        <%= f.hidden_field :book_id, value: book.id %>
     <% end %>
 
-    <div class="field<%= ' field_with_errors' if @comment.errors[:title].any? %>">
+    <div class="field<%= ' field_with_errors' if comment.errors[:title].any? %>">
         <%= f.label :content %><br>
         <%= f.text_area :content %><br><br>
     </div>

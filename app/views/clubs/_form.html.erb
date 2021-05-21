@@ -1,17 +1,17 @@
-<%= form_with model: @club do |f| %>
+<%= form_with model: club do |f| %>
 
-    <% if @club.errors.any? %>
+    <% if club.errors.any? %>
         <div id="error_explanation">
             <h2>There were some errors:</h2>
             <ul>
-                <% @club.errors.full_messages.each do |msg| %>
+                <% club.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
                 <% end %>
             </ul>
         </div>
     <% end %>
 
-    <div class="field<%= ' field_with_errors' if @club.errors[:name].any? %>">
+    <div class="field<%= ' field_with_errors' if club.errors[:name].any? %>">
         <%= f.label :name %><br>
         <%= f.text_field :name %><br><br>
     </div>
