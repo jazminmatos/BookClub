@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-    before_action :set_club, only: [:show, :edit, :update, :destroy]
+    before_action :set_club, only: [:edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index]
     
     def index
@@ -8,6 +8,12 @@ class ClubsController < ApplicationController
 
     def show
         @club_ids = current_user.books.collect{|book| book.club_id}.uniq
+
+        if Club.find_by(id: params[:id])
+            @club = Club.find(params[:id])
+        else
+            redirect_to clubs_path, alert: "Could not find club"
+        end
     end
 
     def new
