@@ -10,8 +10,6 @@ class ClubsController < ApplicationController
     end
 
     def show
-        #@club_ids = current_user.books.collect{|book| book.club_id}.uniq
-
         if Club.find_by(id: params[:id])
             @club = Club.find(params[:id])
         else
@@ -33,9 +31,7 @@ class ClubsController < ApplicationController
         end
     end
 
-    def edit
-        #@club_ids = current_user.books.collect{|book| book.club_id}.uniq
-        
+    def edit        
         if !@club_ids.include?(@club.id)
             redirect_to clubs_path, alert: "You can't edit this club unless you're a part of it..."
         end
@@ -47,6 +43,11 @@ class ClubsController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def poppin
+        #call on the scope method
+        @club = Club.most_books[0]
     end
 
     # Don't want users to be able to destroy clubs

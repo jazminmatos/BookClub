@@ -5,4 +5,5 @@ class Book < ApplicationRecord
 
   validates :title, :author, :summary, presence: true
   #validates :summary, length: { minimum: 25 }
+
 end
